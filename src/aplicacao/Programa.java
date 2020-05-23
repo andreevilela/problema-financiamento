@@ -36,6 +36,41 @@ public class Programa {
 			total = sc.nextDouble();
 		}
 		
+		while (opcao < 4) {
+			System.out.println();
+			System.out.println("MENU:");
+			System.out.println("1 - Mostrar valor da entrada");
+			System.out.println("2 - Mostrar valor financiado");
+			System.out.println("3 - Mostrar valor de cada prestação");
+			System.out.println("4 - Sair");
+			System.out.println("Digite uma opcao: ");
+			opcao = sc.nextInt();
+			while (opcao > 4 || opcao < 1) {
+				System.out.println();
+				System.out.println("OPÇÃO INVALIDA");
+				
+				System.out.println();
+				System.out.println("MENU:");
+				System.out.println("1 - Mostrar valor da entrada");
+				System.out.println("2 - Mostrar valor financiado");
+				System.out.println("3 - Mostrar valor de cada prestação");
+				System.out.println("4 - Sair");
+				System.out.println("Digite uma opcao: ");
+				opcao = sc.nextInt();
+			}
+			
+			if (opcao == 1) {
+				System.out.printf("%nENTRADA = R$ %.2f%n", total * (porcentagem / 100));
+			} else if (opcao == 2) {
+				System.out.printf("%nVALOR FINANCIADO = R$ %.2f%n", total - total * (porcentagem / 100));
+			} else if (opcao == 3) {
+				System.out.printf("%nVALOR DE CADA PRESTACAO = R$ %.2f%n", (total - total * (porcentagem / 100)) / prestacoes);
+			} else {
+				System.out.printf("%nFIM DO PROGRAMA!%n");
+			}
+		
+		}
+		
 		sc.close();
 	}
 
